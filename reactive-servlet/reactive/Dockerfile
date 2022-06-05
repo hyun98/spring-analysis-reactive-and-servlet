@@ -8,4 +8,4 @@ COPY ${JAR_FILE} /HOME/spring/app.jar
 
 WORKDIR /HOME/spring/
 
-ENTRYPOINT ["java", "-jar", "./app.jar"]
+CMD ["java", "-jar", "./app.jar"]
