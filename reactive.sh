@@ -33,7 +33,7 @@ done
 cd reactive-servlet/reactive
 
 echo "Create Database Table"
-docker exec -i spring-analysis-reactive-and-servlet_mysql_1 mysql -uuser -p1234 reactive < schema.sql
+docker exec -i $(docker ps | grep mysql | awk '{print $1}') mysql -uuser -p1234 reactive < schema.sql
 
 echo "Create Database Dummy Data"
-docker exec -i spring-analysis-reactive-and-servlet_mysql_1 mysql -uuser -p1234 reactive < data.sql
+docker exec -i $(docker ps | grep mysql | awk '{print $1}') mysql -uuser -p1234 reactive < data.sql
